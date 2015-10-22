@@ -1,0 +1,26 @@
+
+# Sources set
+SET ( SOURCES
+  specificworker.cpp
+  specificmonitor.cpp
+)
+
+# Headers set
+SET ( HEADERS
+  specificworker.h
+  specificmonitor.h
+)
+
+
+find_package(catkin REQUIRED)
+
+
+include_directories(  ${catkin_INCLUDE_DIRS} )
+SET ( LIBS ${LIBS} ${catkin_LIBRARIES} -L/opt/ros/indigo/lib -lroscpp -lrosbag -lrosconsole -lroscpp_serialization)
+
+
+
+INCLUDE($ENV{ROBOCOMP}/cmake/modules/ipp.cmake)
+
+ADD_DEFINITIONS( -std=c++11 )
+
